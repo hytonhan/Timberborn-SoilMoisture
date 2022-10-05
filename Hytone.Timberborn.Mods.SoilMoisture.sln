@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hytone.Timberborn.Mods.SoilMoisture", "Hytone.Timberborn.Mods.SoilMoisture\Hytone.Timberborn.Mods.SoilMoisture.csproj", "{FF0451F2-B81C-4DBA-B638-4E5657C03D11}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{AC72CC01-1D6E-4B46-A6F1-717AA82D8DB4}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF0451F2-B81C-4DBA-B638-4E5657C03D11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF0451F2-B81C-4DBA-B638-4E5657C03D11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF0451F2-B81C-4DBA-B638-4E5657C03D11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF0451F2-B81C-4DBA-B638-4E5657C03D11}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8AC5D37C-1723-4CFC-8CF8-BF6AD365F266}
+	EndGlobalSection
+EndGlobal
