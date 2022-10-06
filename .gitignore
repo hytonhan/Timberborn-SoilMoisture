@@ -348,3 +348,5 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+/Hytone.Timberborn.Mods.SoilMoisture/package/SoilMoisture/plugins/Hytone.Timberborn.Mods.SoilMoisture.dll
+/Hytone.Timberborn.Mods.SoilMoisture/package/SoilMoisture.zip
