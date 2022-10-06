@@ -1,7 +1,7 @@
 ﻿{
   "name": "SoilMoistureChanger",
-  "version_number": "0.0.1",
-  "website_url": "",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/hytonhan/Timberborn-SoilMoisture",
   "description": "Change the moisturising distance of water.",
   "dependencies": [
     "Timberborn_Central-TimberAPI-0.5.1"
