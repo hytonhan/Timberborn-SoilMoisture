@@ -25,6 +25,9 @@ Thanks to people who contributed:
 
 # Changelog
 
+# v1.1.1 - 10.10.2022
+- Fixed a crash when starting a new game
+
 ## v1.1.0 - 10.10.2022
 - Added option to create Drought Moisture Multiplier
 

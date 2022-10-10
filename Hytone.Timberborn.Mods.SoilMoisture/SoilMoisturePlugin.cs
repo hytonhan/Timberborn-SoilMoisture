@@ -30,7 +30,9 @@ namespace Hytone.Timberborn.Mods.SoilMoisture
         [HarmonyPatch(typeof(SoilMoistureSimulator), nameof(SoilMoistureSimulator.Load))]
         public static void Postfix(SoilMoistureSimulator __instance)
         {
-            var isDrought = __instance._singletonLoader.GetSingleton(new SingletonKey("DroughtService")).Get(new PropertyKey<bool>("IsDrought"));
+            var isDrought = __instance._singletonLoader.HasSingleton(new SingletonKey("DroughtService")) 
+                ? __instance._singletonLoader.GetSingleton(new SingletonKey("DroughtService")).Get(new PropertyKey<bool>("IsDrought")) 
+                : false;
 
             var moistureDistance = isDrought ? Config.DroughtMoistureDistance() : Config.MoistureDistance;
 
