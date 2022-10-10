@@ -1,6 +1,7 @@
 ﻿using HarmonyLib;
 using TimberApi.ConsoleSystem;
 using TimberApi.ModSystem;
+using Timberborn.Persistence;
 using Timberborn.SoilMoistureSystem;
 
 namespace Hytone.Timberborn.Mods.SoilMoisture
@@ -11,11 +12,11 @@ namespace Hytone.Timberborn.Mods.SoilMoisture
     [HarmonyPatch]
     public class SoilMoisturePlugin : IModEntrypoint
     {
-        private static SoilMoistureConfig _config;
+        public static SoilMoistureConfig Config;
 
         public void Entry(IMod mod, IConsoleWriter consoleWriter)
         {
-            _config = mod.Configs.Get<SoilMoistureConfig>();
+            Config = mod.Configs.Get<SoilMoistureConfig>();
 
             var harmony = new Harmony("hytone.plugins.soilmoisture");
             harmony.PatchAll();
@@ -29,8 +30,12 @@ namespace Hytone.Timberborn.Mods.SoilMoisture
         [HarmonyPatch(typeof(SoilMoistureSimulator), nameof(SoilMoistureSimulator.Load))]
         public static void Postfix(SoilMoistureSimulator __instance)
         {
-            __instance._soilMoistureSimulationSettings._maxMoisture = _config.MoistureDistance;
-            __instance._soilMoistureSimulationSettings._verticalSpreadCostMultiplier = _config.UphillPenalty;
+            var isDrought = __instance._singletonLoader.GetSingleton(new SingletonKey("DroughtService")).Get(new PropertyKey<bool>("IsDrought"));
+
+            var moistureDistance = isDrought ? Config.DroughtMoistureDistance() : Config.MoistureDistance;
+
+            __instance._soilMoistureSimulationSettings._maxMoisture = moistureDistance;
+            __instance._soilMoistureSimulationSettings._verticalSpreadCostMultiplier = Config.UphillPenalty;
         }
     }
 
